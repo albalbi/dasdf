@@ -1,0 +1,395 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Gerador de Personagem</title>
+	<link href="novo.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="TabControl"	>
+    <div id="header">
+        <ul class="abas">
+            <li>
+                <div class="aba">
+                    <span>Personagem</span>
+                </div>
+            </li>
+            <li>
+                <div class="aba">
+                    <span>Cidade</span>
+                </div>
+            </li>
+            <li>
+                <div class="aba">
+                    <span>Monstros</span>
+                </div>
+            </li>
+         </ul>
+    </div>
+    <div id="content">
+        <div class="conteudo" onshow="myFunction()">
+            
+  <div id="id_divLeft" class="rightSide">
+	  <table class="center" >
+	   <tbody>
+	      <tr >
+	         <td >Nome</td>
+	         <td >Level</td>
+	         <td >Idade</td>
+	      </tr>
+	      <tr >
+	         <td ><input type="text" id="nome" name="nome" value="" spellcheck="false" /></td>
+	         <td ><input type="number" id="level" name="Editbox2" value="" min="1" maxlength="2" spellcheck="false"></td>
+	         <td ><input type="number" id="idade" name="idade" value="1" maxlength="3" min="1" spellcheck="false" /></td>
+	      </tr>
+	      <tr >
+	         <td >Genero</td>
+	         <td >Raça</td>
+	         <td >Classe</td>
+	      </tr>
+	      <tr >
+	         <td >
+	            <select size="1" id="genero">
+	               <option value=""></option>
+	               <option value="0">Masculino</option>
+	               <option value="1">Feminino</option>
+	            </select>
+	         </td>
+	         <td >
+	         	<select size="1" id="raca">
+	               <option></option>
+	               <option>Humano</option>
+	               <option>Elfo</option>
+	               <option>Gnomo</option>
+	               <option>Halfling</option>
+	               <option>Anão</option>
+	               <option>Meio orc</option>
+	               <option>Meio elfo</option>
+	               <option>Orc</option>
+	               <option>Aasimar</option>
+	               <option>Tiefling</option>
+	               <option>Draconato</option>
+	            </select>
+	         </td>
+	         <td >
+	         	<select size="1" id="classe">
+	               <option value=""></option>
+	               <option>Barbaro</option>
+	               <option>Bardo</option>
+	               <option>Clerigo</option>
+	               <option>Druida</option>
+	               <option>Feiticeiro</option>
+	               <option>Guerreiro</option>
+	               <option>Ladino</option>
+	               <option>Mago</option>
+	               <option>Monge</option>
+	               <option>Paladino</option>
+	               <option>Ranger</option>
+	            </select>
+	            </td>
+	      </tr>
+	      <tr >
+	         <td >Tendencia</td>
+	         <td >Caracteristica 1</td>
+	         <td >Caracteristica 2</td>
+	      </tr>
+	      <tr >
+	         <td >
+	         	<select size="1" id="tend">
+	               <option></option>
+	               <option>Neutro</option>
+	               <option>Neutro bom</option>
+	               <option>Neutro mau</option>
+	               <option>Leal neutro</option>
+	               <option>Leal mau</option>
+	               <option>Leal bom</option>
+	               <option>Caotico neutro</option>
+	               <option>Caotico mau</option>
+	               <option>Caotico bom</option>
+	            </select>
+	         </td>
+	         <td ><input type="text" id="char1" name="char1" value="" spellcheck="false" /></td>
+	         <td ><input type="text" id="char2" name="char2" value="" spellcheck="false" /></td>
+	      </tr>
+	      <tr >
+	         <td >Força</td>
+	         <td >Constituição</td>
+	         <td >Sabedoria</td>
+	      </tr>
+	      <tr >
+	         <td ><input type="number" id="forc" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	         <td ><input type="number" id="con" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	         <td ><input type="number" id="sab" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	      </tr>
+	      <tr >
+	         <td >Inteligencia</td>
+	         <td >Destreza</td>
+	         <td >Carisma</td>
+	      </tr>
+	      <tr >
+	         <td ><input type="number" id="int" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	         <td ><input type="number" id="des" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	         <td ><input type="number" id="car" name="Editbox2" value="1" maxlength="2" spellcheck="false" /></td>
+	      </tr>
+	   </tbody>
+	</table>
+	<table class="center">
+			<tbody>
+				<tr >
+					<td align="center"><button id="gerar">Gerar</button></td>
+					<td align="center"><button id="limpar">Limpar</button></td>
+				</tr>
+			</tbody>
+	</table>
+  </div>
+
+  <div id="id_divRight" class="leftSide">
+  	 <div id="id_divRight_img" class="center">
+  	  <!-- asd -->
+  	  
+		<canvas id="myCanvas">
+			
+		</canvas>
+		
+		<br/>
+		<br/>
+		<div id="id_divAparencia" class="center">
+		    <button id='id_butLeft' style="float:left;"> &lt; </button>
+			<select name="joao" id="id_select" style="width:inherit;">
+		      <option value="1">Olho</option>
+		      <option value="2">Cor do Olho</option>
+		      <option value="3">Cabelo</option>
+		      <option value="4">Cor do Cabelo</option>
+		      <option value="5">Boca</option>
+		      <option value="6">Sobrancelha</option>
+		      <option value="7">Nariz</option>
+		      <option value="8">Barba</option>
+		      <option value="9">Orelha</option>
+		      <option value="10">Bigode</option>
+		    </select>
+		    <button id='id_butRight' style="float:right;"> &gt; </button>
+		</div>
+	
+	    <img src="#" id="id_imgOlho" width="500px" height="300px" style="display:none;">
+	    <img src="#" id="id_imgCordoOlho" width="500px" height="300px" style="display:none;">
+	    <img src="#" id="id_imgCabelo" width="500px" height="300px" style="display:none;">
+	    <img src="#" id="id_imgCordoCabelo" width="500px" height="300px" style="display:none;">
+	    <img src="#" id="id_imgBoca" width="500px" height="300px" style="display:none;">
+	    <img src="#" id="id_imgSobrancelha" width="500px" height="300px" style="display:none;">
+	    <img src="#" id="id_imgBarba" width="500px" height="300px" style="display:none;">
+	    <img src="#" id="id_imgNariz" width="500px" height="300px" style="display:none;">
+	    <img src="#" id="id_imgBigode" width="500px" height="300px" style="display:none;">
+	    <img src="#" id="id_imgOrelha" width="500px" height="300px" style="display:none;">
+ 	 	<img src="#" id="img" width="265px" height="208px" style="display:none"/>
+ 	 	<img id="img-cabelo" src ='#' width="265px" height="208px" style="display:none"/>
+ 			 
+ 	 </div>
+  	
+   <br>
+
+  </div>
+        </div>
+        <div class="conteudo">
+
+
+  <div id="id_divLeft2" class="rightSide center">
+<table>
+<tr>
+    <td>
+Tipo: 	<select id="id_tipo">
+			<option value=""></option>
+			<option value="lugarejo">Lugarejo</option>
+			<option value="povoado">Povoado</option>
+			<option value="aldeia">Aldeia</option>
+			<option value="vila pequena">Vila Pequena</option>
+			<option value="vila grande">Vila Grande</option>
+			<option value="cidade pequena">Cidade Pequena</option>
+			<option value="cidade grande">Cidade Grande</option>
+			<option value="metropole">Metropole</option>
+		</select>
+        </td>
+    <td>
+População: <input type="text" id="id_populacao" placeholder="População">
+        </td>
+    </tr>
+<tr>
+    <td>
+Tendencia: <select id="id_tendencia">
+			<option value=""></option>
+			<option value="Leal Bom">Leal Bom</option>
+			<option value="Leal Neutro">Leal Neutro</option>
+			<option value="Leal Mau">Leal Mau</option>
+			<option value="Caotico Bom">Caotico Bom</option>
+			<option value="Caotico Neutro">Caotico Neutro</option>
+			<option value="Caotico Mau">Caotico Mau</option>
+			<option value="Neutro">Neutro</option>
+			<option value="Neutro Bom">Neutro Bom</option>
+			<option value="Neutro Mau">Neutro Mau</option>
+		</select>
+        </td>
+    <td>
+Dinheiro: <input type="text" id="id_dinheiro" placeholder="Dinheiro">
+        </td>
+    </tr>
+<tr>
+    <td colspan="2">
+Controle: <select id="id_controle">
+			<option value=""></option>
+			<option value="convencional">Convencional</option>
+			<option value="incomum">Incomum</option>
+			<option value="magico">Mágico</option>
+			<option value="monstruoso">Monstruoso</option>
+		</select>
+        </td>
+    </tr>
+</table>
+
+<br>
+
+<table>
+<tr>
+    <td width="300">
+Cap. da Guarda: <input type="text" id="id_capitao" placeholder="capitão da cidade" size="25">
+        </td>
+    <td>
+Num Soldados: <input type="text" id="id_soldados" placeholder="Numero de Soldados">
+        </td>
+    </tr>
+
+</table>
+
+<br>
+<button id="id_gerar">Gerar</button><br>
+</div>
+ <div id="id_divRight2" class="leftSide">
+		<!--<label id="id_label"></label>-->
+  </div>
+
+        </div>
+        <div class="conteudo">
+        	<div id="id_divLeft3" class="rightSide center">
+	  <table>
+	  	<tr>
+	  		<td colspan="2" align="center">
+	  			<select id="id_Monster"></select>
+	  		</td>
+	  	</tr>
+	  	<tr>
+	  		<td>T. Armor: <input type="text" id="id_MonsterACType" value=""spellcheck="false"></td>
+	  		<td>AC: <input type="number" id="id_MonsterAC" value="1" spellcheck="false"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>CR: <input type="number" id="id_MonsterChaRating" value="1" spellcheck="false"></td>
+	  		<td> XP: <input type="number" id="id_MonsterChaXP" value="1" spellcheck="false"></td>
+	  	</tr>
+	  	<tr>
+	  		<td>STR: <input type="number" id="id_MonsterSTR" value="1" min="1" spellcheck="false"></td>
+	  		<td>STRMod: <input type="number" id="id_MonsterSTRMod" value="1" maxlength="2" spellcheck="false"></td>
+	 	</tr>
+	  	<tr>
+	  		<td>DEX: <input type="number" id="id_MonsterDEX" value="1" min="1" spellcheck="false"></td>
+	  		<td>DEXMod: <input type="number" id="id_MonsterDEXMod" value="1" maxlength="2" spellcheck="false"></td>
+	 	</tr>
+	  	<tr>
+	  		<td>CON: <input type="number" id="id_MonsterCON" value="1" min="1" spellcheck="false"></td>
+	  		<td>CONMod: <input type="number" id="id_MonsterCONMod" value="1" maxlength="2" spellcheck="false"></td>
+	 	</tr>
+	  	<tr>
+	  		<td>INT: <input type="number" id="id_MonsterINT" value="1" min="1" spellcheck="false"></td>
+	  		<td>INTMod: <input type="number" id="id_MonsterINTMod" value="1" maxlength="2" spellcheck="false"></td>
+	 	</tr>
+	  	<tr>
+	  		<td>WIS: <input type="number" id="id_MonsterWIS" value="1" min="1" spellcheck="false"></td>
+	  		<td>WISMod: <input type="number" id="id_MonsterWISMod" value="1" maxlength="2" spellcheck="false"></td>
+	 	</tr>
+	  	<tr>
+	  		<td>CHA: <input type="number" id="id_MonsterCHA" value="1" min="1" spellcheck="false"></td>
+	  		<td>CHAMod: <input type="number" id="id_MonsterCHAMod" value="1" maxlength="2" spellcheck="false"></td>
+	 	</tr>
+	  	<tr>
+	  		<td>HP: <input type="number" id="id_MonsterHP" value="1" min="1" spellcheck="false"></td>
+	  		<td>HPDice: <input type="text" id="id_MonsterHPMod" value="1" maxlength="2" spellcheck="false"></td>
+	 	</tr>
+	  	
+	 	<tr>
+	 		<td align="center">
+				<button id="id_monsterCreate">Gerar</button>
+	 		</td>
+	 		<td align="center">
+				<button id="id_monsterClear">Limpar</button>
+	 		</td>
+	 	</tr>
+	  </table>
+  </div>
+
+  <div id="id_divRight3" class="leftSide center">
+  	<img id="img_monster" src="#" style="display:none">
+  </div>
+        	
+             <script src="monstros.js"></script>
+        </div>
+        
+    </div>
+</div>
+
+<style>
+    body{font-family:Calibri, Tahoma, Arial}
+    .TabControl{ width:100%; overflow:hidden; height:600px}
+    .TabControl #header{ width:100%; border: solid 1px; overflow:hidden; cursor:hand}
+    .TabControl #content{ width:100%; border: solid 1px;overflow:hidden; height:100%; }
+    .TabControl .abas{display:inline;}
+    .TabControl .abas li{float:left}
+    .aba{width:100px; height:30px; border:solid 1px; border-radius:5px 5px 0 0;
+        text-align:center; padding-top:5px; background:#2d2d2d}
+    .ativa{width:100px; height:30px; border:solid 1 px; border-radius:5px 5px 0 0;
+        text-align:center; padding-top:5px; background:#2D2D2D;}
+    .ativa span, .selected span{color:#fff}
+    .TabControl #content{background:#2D2D2D}
+    .TabControl .conteudo{width:100%;  background:#2D2D2D; display:none; height:100%;color:#fff}
+    .selected{width:100px; height:30px;display:block; border:solid 1 px; border-radius:5px 5px 0 0;
+        text-align:center; padding-top:5px; background:#2D2D2D}
+</style>
+
+	
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#content div").show();
+  $(".abas li:first div").addClass("selected");       
+  $(".aba").click(function()
+  {
+    $(".aba").removeClass("selected");
+    $(this).addClass("selected");
+    var indice = $(this).parent().index();
+    indice++;
+    $("#content div").hide();
+    $("#content div:nth-child("+indice+")").show();
+    document.getElementById('id_divRight').style.display = "block";
+    document.getElementById('id_divRight2').style.display = "block";
+    document.getElementById('id_divLeft2').style.display = "block";
+    document.getElementById('id_divRight3').style.display = "block";
+    document.getElementById('id_divLeft3').style.display = "block";
+    document.getElementById('id_divAparencia').style.display = "block";
+  }); 
+   
+  $(".aba").hover(
+    function(){$(this).addClass("ativa");},
+    function(){$(this).removeClass("ativa");}
+  );              
+});
+
+</script>
+
+
+
+
+
+  <script src="java.js"></script>
+  <script src="cidades.js"></script>
+  
+</body>
+</html>

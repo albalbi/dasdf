@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Gerador de Cidades</title>
+	<link href="novo.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<table>
+<tr>
+    <td>
+Tipo: 	<select id="id_tipo">
+			<option value=""></option>
+			<option value="lugarejo">Lugarejo</option>
+			<option value="povoado">Povoado</option>
+			<option value="aldeia">Aldeia</option>
+			<option value="vila pequena">Vila Pequena</option>
+			<option value="vila grande">Vila Grande</option>
+			<option value="cidade pequena">Cidade Pequena</option>
+			<option value="cidade grande">Cidade Grande</option>
+			<option value="metropole">Metropole</option>
+		</select>
+        </td>
+    <td>
+População: <input type="text" id="id_populacao" placeholder="População">
+        </td>
+    </tr>
+<tr>
+    <td>
+Tendencia: <select id="id_tendencia">
+			<option value=""></option>
+			<option value="Leal Bom">Leal Bom</option>
+			<option value="Leal Neutro">Leal Neutro</option>
+			<option value="Leal Mau">Leal Mau</option>
+			<option value="Caotico Bom">Caotico Bom</option>
+			<option value="Caotico Neutro">Caotico Neutro</option>
+			<option value="Caotico Mau">Caotico Mau</option>
+			<option value="Neutro">Neutro</option>
+			<option value="Neutro Bom">Neutro Bom</option>
+			<option value="Neutro Mau">Neutro Mau</option>
+		</select>
+        </td>
+    <td>
+Dinheiro: <input type="text" id="id_dinheiro" placeholder="Dinheiro">
+        </td>
+    </tr>
+<tr>
+    <td colspan="2">
+Controle: <select id="id_controle">
+			<option value=""></option>
+			<option value="convencional">Convencional</option>
+			<option value="incomum">Incomum</option>
+			<option value="magico">Mágico</option>
+			<option value="monstruoso">Monstruoso</option>
+		</select>
+        </td>
+    </tr>
+</table>
+
+<br>
+
+<table>
+<tr>
+    <td>
+Cap. da Guarda: <input type="text" id="id_capitao" placeholder="capitão da cidade">
+        </td>
+    <td>
+Num Soldados: <input type="text" id="id_soldados" placeholder="Numero de Soldados">
+        </td>
+    </tr>
+
+</table>
+
+<br>
+
+<!--<table>
+<tr>
+    <td>
+Cap. da Guarda: <input type="text" id="id_capitao" placeholder="capitão da cidade">
+        </td>
+    <td>
+Num Soldados: <input type="text" id="id_soldados" placeholder="Numero de Soldados">
+        </td>
+    </tr>
+
+</table>-->
+<button id="id_gerar">Gerar</button><br>
+<label id="id_label"></label>
+</body>
+</html>
+<script src="cidades.js"></script>
